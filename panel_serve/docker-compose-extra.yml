@@ -3,10 +3,11 @@ services:
   panel_serve:
     image: pavics/workflow-tests:220502
     container_name: panel_serve
+    volumes:
+    - ../../test-panel-serve/test-notebooks:/notebook_dir/test-notebooks-ro:ro
     command: jupyter lab --ip=0.0.0.0 --port=8890 --no-browser --ServerApp.base_url=/panel_serve/
     restart: always
 
   proxy:
     volumes:
     - ../../test-panel-serve/panel_serve/panel_serve.conf:/etc/nginx/conf.extra-service.d/panel_serve/panel_serve.conf:ro
-    - ../../test-panel-serve/test-notebooks:/notebook_dir/test-notebooks-ro:ro
