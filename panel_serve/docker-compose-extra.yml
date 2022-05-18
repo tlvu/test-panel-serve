@@ -4,10 +4,10 @@ services:
     image: pavics/workflow-tests:220502
     container_name: panel_serve
     ports:
-    - 9092:9092
+    - 5007:5007
     volumes:
     - ../../test-panel-serve/test-notebooks:/notebook_dir/test-notebooks-ro:ro
-    command: panel serve /notebook_dir/test-notebooks/test-panel-servable-workdir.ipynb --port 9092
+    command: panel serve --port=5007 --allow-websocket-origin=* /notebook_dir/test-notebooks/test-panel-servable-workdir.ipynb
     restart: always
 
   proxy:
