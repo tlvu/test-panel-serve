@@ -5,7 +5,7 @@ services:
     container_name: panel_serve
     volumes:
     - ../../test-panel-serve/test-notebooks:/notebook_dir/test-notebooks-ro:ro
-    command: panel serve /notebook_dir/test-notebooks/test-panel-servable-workdir.ipynb --port 8890
+    command: panel serve /notebook_dir/test-notebooks/test-panel-servable-workdir.ipynb --port 9092
     restart: always
 
   proxy:
