@@ -9,3 +9,4 @@ services:
   proxy:
     volumes:
     - ../../test-panel-serve/panel_serve/panel_serve.conf:/etc/nginx/conf.extra-service.d/panel_serve/panel_serve.conf:ro
+    - ../../test-panel-serve/test-notebooks:/notebook_dir/test-notebooks-ro:ro
