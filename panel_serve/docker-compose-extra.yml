@@ -3,6 +3,8 @@ services:
   panel_serve:
     image: pavics/workflow-tests:220502
     container_name: panel_serve
+    ports:
+    - 9092:9092
     volumes:
     - ../../test-panel-serve/test-notebooks:/notebook_dir/test-notebooks-ro:ro
     command: panel serve /notebook_dir/test-notebooks/test-panel-servable-workdir.ipynb --port 9092
