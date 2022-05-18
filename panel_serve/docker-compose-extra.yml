@@ -3,6 +3,8 @@ services:
   panel_serve:
     image: pavics/workflow-tests:220502
     container_name: panel_serve
+    environments:
+    - JUPYTER_TOKEN: tryme
     ports:
     - 5007:5007
     volumes:
