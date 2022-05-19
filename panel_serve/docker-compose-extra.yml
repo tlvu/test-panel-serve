@@ -10,7 +10,7 @@ services:
     volumes:
     - ../../test-panel-serve/test-notebooks:/notebook_dir/test-notebooks-ro:ro
     #    command: jupyter lab --ip=0.0.0.0 --port=5007 --no-browser --ServerApp.base_url=/panel_serve/
-    command: bash -c "panel serve --port=5007 --allow-websocket-origin=* /notebook_dir/test-notebooks-ro/test-panel-servable-workdir.ipynb"
+    command: bash -c "panel serve --port=5007 --allow-websocket-origin=* /notebook_dir/test-notebooks-ro/test-panel-servable-workdir.ipynb /notebook_dir/test-notebooks-ro/copie2.ipynb"
     restart: always
 
   proxy:
