@@ -1,13 +1,13 @@
-    location /test-panel-servable-workdir/ {
-        proxy_pass http://panel_serve:5007/test-panel-servable-workdir/;
+    location /test-panel-servable-workdir {
+        proxy_pass http://panel_serve:5007/test-panel-servable-workdir;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header Host $host;
         proxy_set_header X-Forwarded-Proto $real_scheme;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
-        # websocket headers, needed for Jupyterhub only
-        #proxy_set_header Upgrade $http_upgrade;
-        #proxy_set_header Connection $connection_upgrade;
+        # websocket headers
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
     }
 
     location /static {
